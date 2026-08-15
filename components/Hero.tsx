@@ -3,7 +3,7 @@ const HAND =
 
 export const Hero = () => {
   return (
-    <main className="super-env min-h-screen bg-white px-3 py-3 sm:px-5 sm:py-5 lg:px-6 mt-12">
+    <main className="super-env min-h-screen bg-white px-3 py-3 sm:px-5 sm:py-5 lg:px-6 mt-13">
       <section className="mx-auto w-full max-w-[1400px]">
         <div className="relative isolate min-h-[560px] overflow-hidden rounded-[28px] bg-[url('/bg-2.png')] bg-cover bg-center sm:min-h-[640px] lg:min-h-[720px]">
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[420px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/15 blur-[100px] sm:h-[500px] sm:w-[750px] lg:h-[560px] lg:w-[850px]" />
