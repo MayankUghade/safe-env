@@ -8,7 +8,9 @@ export default function CreatePage() {
   const [password, setPassword] = useState("");
   const [expirationMinutes, setExpirationMinutes] = useState(5);
   const [link, setLink] = useState("");
+  const [clilink, setClilink] = useState("");
   const [isCopied, setIsCopied] = useState(false);
+  const [isCliCopied, setIsCliCopied] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -19,6 +21,7 @@ export default function CreatePage() {
     setIsLoading(true);
     setError("");
     setLink("");
+    setClilink("");
 
     try {
       const res = await fetch("/api/create", {
@@ -39,8 +42,13 @@ export default function CreatePage() {
         throw new Error(data.error || "Something went wrong");
       }
 
-      setLink(`${window.location.origin}/view/${data.id}`);
+      const generatedLink = `${window.location.origin}/view/${data.id}`;
+      const generatedCliLink = `npx safe-env-cli ${generatedLink}`;
+
+      setLink(generatedLink);
+      setClilink(generatedCliLink);
       setIsCopied(false);
+      setIsCliCopied(false);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -56,6 +64,17 @@ export default function CreatePage() {
 
     setTimeout(() => {
       setIsCopied(false);
+    }, 2000);
+  }
+
+  async function handleCliCopy() {
+    if (!clilink) return;
+
+    await navigator.clipboard.writeText(clilink);
+    setIsCliCopied(true);
+
+    setTimeout(() => {
+      setIsCliCopied(false);
     }, 2000);
   }
 
@@ -112,11 +131,14 @@ API_KEY=your_secret_api_key`}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
+
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-gray-400 hover:text-gray-600 focus:outline-none"
-                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-gray-400 hover:text-gray-600"
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
                   >
                     {showPassword ? (
                       <EyeOff className="h-5 w-5" />
@@ -182,35 +204,71 @@ API_KEY=your_secret_api_key`}
             </button>
           </div>
 
-          {link && (
-            <div className="mt-8 animate-in fade-in slide-in-from-bottom-2 rounded-xl border border-green-200 bg-green-50 p-5 duration-300">
-              <h3 className="mb-1.5 text-sm font-semibold text-green-900">
-                Link Generated Successfully!
-              </h3>
+          {link && clilink && (
+            <div className="mt-8 space-y-4">
+              <div className="animate-in fade-in slide-in-from-bottom-2 rounded-xl border border-green-200 bg-green-50 p-5 duration-300">
+                <h3 className="mb-1.5 text-sm font-semibold text-green-900">
+                  Link Generated Successfully!
+                </h3>
 
-              <p className="mb-4 text-sm text-green-800">
-                Share this link and the password with your team. It will
-                self-destruct after {expirationMinutes} minutes.
-              </p>
+                <p className="mb-4 text-sm text-green-800">
+                  Share this link and the password with your team. It will
+                  self-destruct after {expirationMinutes} minutes.
+                </p>
 
-              <div className="flex items-center gap-2">
-                <input
-                  readOnly
-                  value={link}
-                  className="w-full rounded-lg border border-green-300 bg-white p-2.5 text-sm text-gray-800 outline-none"
-                  onFocus={(e) => e.target.select()}
-                />
+                <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-green-800/70">
+                  Browser
+                </label>
 
-                <button
-                  onClick={handleCopy}
-                  className={`flex shrink-0 items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors ${
-                    isCopied
-                      ? "bg-green-700"
-                      : "bg-green-600 hover:bg-green-700"
-                  }`}
-                >
-                  {isCopied ? "Copied!" : "Copy"}
-                </button>
+                <div className="flex items-center gap-2">
+                  <input
+                    readOnly
+                    value={link}
+                    className="w-full rounded-lg border border-green-300 bg-white p-2.5 text-sm text-gray-800 outline-none"
+                    onFocus={(e) => e.target.select()}
+                  />
+
+                  <button
+                    onClick={handleCopy}
+                    className={`flex shrink-0 items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors ${
+                      isCopied
+                        ? "bg-green-700"
+                        : "bg-green-600 hover:bg-green-700"
+                    }`}
+                  >
+                    {isCopied ? "Copied!" : "Copy"}
+                  </button>
+                </div>
+              </div>
+
+              <div className="animate-in fade-in slide-in-from-bottom-2 rounded-xl border border-[#10233F]/10 bg-[#10233F]/[0.03] p-5 duration-300">
+                <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-[#10233F]/60">
+                  CLI
+                </label>
+
+                <p className="mb-3 text-sm text-[#10233F]/60">
+                  Fetch your environment variables directly from your terminal.
+                </p>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    readOnly
+                    value={clilink}
+                    className="w-full rounded-lg border border-gray-300 bg-white p-2.5 font-mono text-sm text-gray-800 outline-none"
+                    onFocus={(e) => e.target.select()}
+                  />
+
+                  <button
+                    onClick={handleCliCopy}
+                    className={`flex shrink-0 items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors ${
+                      isCliCopied
+                        ? "bg-[#193554]"
+                        : "bg-[#10233F] hover:bg-[#193554]"
+                    }`}
+                  >
+                    {isCliCopied ? "Copied!" : "Copy"}
+                  </button>
+                </div>
               </div>
             </div>
           )}

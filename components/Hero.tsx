@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const HAND =
   "https://res.cloudinary.com/dxmda85h3/image/upload/v1786689841/left-hand_r906m5.png";
 
@@ -50,19 +52,24 @@ export const Hero = () => {
               <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#10233F]/60 sm:mt-6 sm:text-base sm:leading-7 lg:text-[17px]">
                 Super Env lets you store, share, and manage temporary environment variables securely across your team.
               </p>
-
+            
+            
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:flex-row">
-                <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#10233F] px-6 py-3 text-sm font-medium text-white shadow-[0_8px_30px_rgba(16,35,63,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#193554] hover:shadow-[0_12px_35px_rgba(16,35,63,0.22)] sm:w-auto">
+                <Link href = "/create">
+                <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#10233F] px-6 py-3 text-sm font-medium text-white shadow-[0_8px_30px_rgba(16,35,63,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#193554] hover:shadow-[0_12px_35px_rgba(16,35,63,0.22)] sm:w-auto cursor-pointer" >
                   Get started
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14" />
                     <path d="m13 6 6 6-6 6" />
                   </svg>
                 </button>
-
-                <button className="w-full rounded-full border border-white/60 bg-white/50 px-6 py-3 text-sm font-medium text-[#10233F] shadow-[0_4px_20px_rgba(16,35,63,0.04)] backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/75 hover:shadow-[0_8px_25px_rgba(16,35,63,0.08)] sm:w-auto">
+                </Link>
+                
+              <Link href="#how-it-works">
+                <button className="w-full rounded-full border border-white/60 bg-white/50 px-6 py-3 text-sm font-medium text-[#10233F] shadow-[0_4px_20px_rgba(16,35,63,0.04)] backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/75 hover:shadow-[0_8px_25px_rgba(16,35,63,0.08)] sm:w-auto cursor-pointer">
                   See how it works
                 </button>
+              </Link>
               </div>
             </div>
           </div>

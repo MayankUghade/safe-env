@@ -1,0 +1,30 @@
+{
+  "name": "safe-env-cli",
+  "version": "1.0.1",
+  "description": "Pull encrypted, password-protected env vars from a safe-env link straight into your .env file",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "safe-env-cli": "index.js"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "secrets",
+    "cli",
+    "secure",
+    "encrypted"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/safe-env-cli.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "prompts": "^2.4.2"
+  }
+}

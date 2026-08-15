@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export const Banner = () => {
   return (
-    <div className="mx-auto my-20 w-full max-w-[1100px] px-4 sm:px-6">
+    <div className="mx-auto my-20 w-full max-w-[1300px] px-4 sm:px-6">
       <div className="relative min-h-[420px] overflow-hidden rounded-[28px] bg-[url('/bg-2.png')] bg-cover bg-center shadow-[0_20px_60px_rgba(16,35,63,0.10)] sm:min-h-[440px]">
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-white/95 via-white/80 to-white/35" />
         <div className="absolute -right-24 top-1/2 z-[1] h-[480px] w-[480px] -translate-y-1/2 rounded-full bg-[#245B8F]/10 blur-[100px]" />
@@ -55,14 +57,15 @@ export const Banner = () => {
                 Self-destructing links
               </div>
             </div>
-
-            <button className="mt-7 flex w-fit items-center gap-3 rounded-full bg-[#10233F] px-6 py-3.5 text-sm font-medium text-white shadow-[0_8px_25px_rgba(16,35,63,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#193554] hover:shadow-[0_12px_30px_rgba(16,35,63,0.22)]">
+        <Link href="/create">
+            <button className="mt-7 flex w-fit items-center gap-3 rounded-full bg-[#10233F] px-6 py-3.5 text-sm font-medium text-white shadow-[0_8px_25px_rgba(16,35,63,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#193554] hover:shadow-[0_12px_30px_rgba(16,35,63,0.22)] cursor-pointer">
               Get started
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14" />
                 <path d="m13 6 6 6-6 6" />
               </svg>
             </button>
+            </Link>
           </div>
         </div>
       </div>

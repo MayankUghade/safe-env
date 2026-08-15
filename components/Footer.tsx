@@ -14,21 +14,17 @@ export const Footer = () => {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-[#53657A]">
-          <a href="#features" className="transition-colors hover:text-[#10233F]">
-            Features
-          </a>
-          <a href="#how-it-works" className="transition-colors hover:text-[#10233F]">
-            How it works
-          </a>
-          <a href="#security" className="transition-colors hover:text-[#10233F]">
-            Security
-          </a>
-        </div>
-
-        <p className="text-xs text-[#10233F]/45">
-          © {new Date().getFullYear()} Super Env. All rights reserved.
-        </p>
+      <p className="text-xs text-[#10233F]/45">
+        © {new Date().getFullYear()} Made by{" "}
+        <a
+          href="https://x.com/MayankUghade3"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-[#10233F] underline"
+        >
+          Mayank Ughade
+        </a>
+      </p>
       </div>
     </footer>
   );

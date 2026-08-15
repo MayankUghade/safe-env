@@ -52,7 +52,7 @@ export default function ViewPage() {
               <path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
             </svg>
             <p className="text-sm leading-5 text-[#8a5f0f]">
-              This content has been permanently deleted from the server. Copy or save it now — this link no longer works.
+              This content will be permenantly deleted from the server. Copy or save it now — this link no longer works.
             </p>
           </div>
 
