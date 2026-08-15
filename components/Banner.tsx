@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Banner = () => {
   return (
     <div className="mx-auto my-20 w-full max-w-[1300px] px-4 sm:px-6">
-      <div className="relative min-h-[420px] overflow-hidden rounded-[28px] bg-[url('/bg-2.png')] bg-cover bg-center shadow-[0_20px_60px_rgba(16,35,63,0.10)] sm:min-h-[440px]">
+      <div className="relative min-h-[420px] overflow-hidden rounded-[28px] bg-[url('https://res.cloudinary.com/dxmda85h3/image/upload/v1786813296/ChatGPT_Image_Aug_15_2026_10_31_26_PM_knm4xs.png')] bg-cover bg-center shadow-[0_20px_60px_rgba(16,35,63,0.10)] sm:min-h-[440px]">
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-white/95 via-white/80 to-white/35" />
         <div className="absolute -right-24 top-1/2 z-[1] h-[480px] w-[480px] -translate-y-1/2 rounded-full bg-[#245B8F]/10 blur-[100px]" />
         <div className="absolute -right-10 -top-20 z-[1] h-[260px] w-[260px] rounded-full bg-white/30 blur-[70px]" />

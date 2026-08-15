@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <main className="super-env min-h-screen bg-white px-3 py-3 sm:px-5 sm:py-5 lg:px-6 mt-13">
       <section className="mx-auto w-full max-w-[1400px]">
-        <div className="relative isolate min-h-[560px] overflow-hidden rounded-[28px] bg-[url('/bg-2.png')] bg-cover bg-center sm:min-h-[640px] lg:min-h-[720px]">
+        <div className="relative isolate min-h-[560px] overflow-hidden rounded-[28px] bg-[url('https://res.cloudinary.com/dxmda85h3/image/upload/v1786813296/ChatGPT_Image_Aug_15_2026_10_31_26_PM_knm4xs.png')] bg-cover bg-center sm:min-h-[640px] lg:min-h-[720px]">
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[420px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/15 blur-[100px] sm:h-[500px] sm:w-[750px] lg:h-[560px] lg:w-[850px]" />
 
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.08] [background:repeating-conic-gradient(from_0deg,rgba(255,255,255,0.7)_0deg,rgba(255,255,255,0.7)_0.7deg,transparent_0.7deg,transparent_12deg)] blur-[1px]" />
