@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Star } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
@@ -44,7 +45,8 @@ export const Navbar = () => {
         <Link href="https://github.com/MayankUghade/safe-env" target="_blank" rel="noopener noreferrer">
         <Button className="bg-[#10233F] px-5 py-3 text-sm font-medium text-white shadow-[0_6px_20px_rgba(16,35,63,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#193554] hover:shadow-[0_10px_25px_rgba(16,35,63,0.18)]">
             <Star/>
-             Star on github
+             Star on Github
+             <FaGithub/>
         </Button>
         </Link>
       </div>
