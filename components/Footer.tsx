@@ -10,7 +10,7 @@ export const Footer = () => {
             />
           </svg>
           <span className="text-lg font-semibold tracking-[-0.03em] text-[#10233F]">
-            Super Env
+            SafeEnv
           </span>
         </div>
 

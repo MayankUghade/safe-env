@@ -22,7 +22,7 @@ export const Navbar = () => {
           </svg>
 
           <span className="text-[22px] font-semibold tracking-[-0.03em] text-[#10233F]">
-            Super Env
+            SafeEnv
           </span>
         </a>
 
