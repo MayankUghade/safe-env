@@ -9,7 +9,6 @@ import { HowItWorksSection } from "@/components/working";
 export default function Home() {
   return (
     <div>
-      <Navbar/>
       <Hero/>
       <FeaturesSection/>
       <HowItWorksSection/>

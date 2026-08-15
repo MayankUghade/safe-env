@@ -3,23 +3,27 @@ export const Banner = () => {
     <div className="mx-auto my-20 w-full max-w-[1100px] px-4 sm:px-6">
       <div className="relative min-h-[420px] overflow-hidden rounded-[28px] bg-[url('/bg-2.png')] bg-cover bg-center shadow-[0_20px_60px_rgba(16,35,63,0.10)] sm:min-h-[440px]">
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-white/95 via-white/80 to-white/35" />
-
         <div className="absolute -right-24 top-1/2 z-[1] h-[480px] w-[480px] -translate-y-1/2 rounded-full bg-[#245B8F]/10 blur-[100px]" />
-
         <div className="absolute -right-10 -top-20 z-[1] h-[260px] w-[260px] rounded-full bg-white/30 blur-[70px]" />
-
         <div className="absolute inset-0 z-[2] bg-[url('/noise.png')] bg-[length:180px_180px] opacity-[0.055] mix-blend-multiply" />
 
-        <div className="absolute right-[8%] top-1/2 z-[2] hidden h-[260px] w-[260px] -translate-y-1/2 rounded-full border border-white/40 opacity-50 sm:block" />
 
-        <div className="absolute right-[12%] top-1/2 z-[2] hidden h-[170px] w-[170px] -translate-y-1/2 rounded-full border border-[#245B8F]/10 sm:block" />
-
-        <div className="absolute bottom-0 right-0 z-[2] h-40 w-[65%] bg-gradient-to-t from-[#dcecf5]/30 to-transparent" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="pointer-events-none absolute -right-16 -top-16 z-[1] h-[340px] w-[340px] rotate-12 opacity-[0.06] sm:h-[420px] sm:w-[420px]">
+          <path
+            d="M 152 70.059 L 201.539 20.519 L 235.48 54.461 L 185.941 104 L 256 104 L 256 152 L 185.941 152 L 235.48 201.539 L 201.539 235.48 L 152 185.941 L 152 256 L 104 256 L 104 185.941 L 54.46 235.48 L 20.52 201.539 L 70.059 152 L 0 152 L 0 104 L 70.059 104 L 20.519 54.46 L 54.461 20.52 L 104 70.059 L 104 0 L 152 0 Z"
+            fill="#10233F"
+          />
+        </svg>
 
         <div className="relative z-10 flex min-h-[420px] flex-col justify-center px-7 py-14 sm:min-h-[440px] sm:px-10 lg:px-14">
           <div className="max-w-[600px]">
             <div className="mb-4 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#245B8F]/70">
-              <span className="h-px w-6 bg-[#245B8F]/40" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-3 w-3 shrink-0">
+                <path
+                  d="M 152 70.059 L 201.539 20.519 L 235.48 54.461 L 185.941 104 L 256 104 L 256 152 L 185.941 152 L 235.48 201.539 L 201.539 235.48 L 152 185.941 L 152 256 L 104 256 L 104 185.941 L 54.46 235.48 L 20.52 201.539 L 70.059 152 L 0 152 L 0 104 L 70.059 104 L 20.519 54.46 L 54.461 20.52 L 104 70.059 L 104 0 L 152 0 Z"
+                  fill="#245B8F"
+                />
+              </svg>
               Built for your team
             </div>
 
@@ -38,17 +42,14 @@ export const Banner = () => {
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#245B8F]/60" />
                 No login required
               </div>
-
               <div className="flex items-center gap-2.5">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#245B8F]/60" />
                 Free forever
               </div>
-
               <div className="flex items-center gap-2.5">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#245B8F]/60" />
                 End-to-end encrypted
               </div>
-
               <div className="flex items-center gap-2.5">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#245B8F]/60" />
                 Self-destructing links

@@ -21,7 +21,5 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
 
   const content = decryptContent(data.encrypted, password, data.salt, data.iv, data.authTag);
 
-  await redis.del(key);
-
   return NextResponse.json({ content });
 }
